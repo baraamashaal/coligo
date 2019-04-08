@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import UiReducer from './store/reducers/ui-reducer';
+import QuizzesReducer from './store/reducers/quizzes-reducer';
 
 // localization
 import { IntlProvider } from 'react-intl';
@@ -17,7 +18,8 @@ import ReduxThunk from 'redux-thunk' // no changes here 😀
 
 
 const rootReducer = combineReducers({
-  ui: UiReducer
+  ui: UiReducer,
+  qiz: QuizzesReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));

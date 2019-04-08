@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyle = makeStyles(theme => ({
   root: {
-    padding: '10px'
+    padding: '10px',
+    color: theme.palette.text.secondary
   },
   cardTitle: {
     fontWeight: 600,
@@ -29,17 +30,17 @@ export default function FlatCard(card) {
       <div className={classes.cardHeader}>
         <Typography
           className={classes.cardTitle}
-          color="textSecondary"
+          
           variant="h6"
           component="h3"
         >
           {card.title}
         </Typography>
-        <Typography color="textSecondary" variant="caption">
+        <Typography  variant="caption">
           {card.subtitle}
         </Typography>
       </div>
-      <div  className={classes.cardBody}>{card.children}</div>
+      <div className={classes.cardBody}>{card.children}</div>
     </Paper>
   );
 }
